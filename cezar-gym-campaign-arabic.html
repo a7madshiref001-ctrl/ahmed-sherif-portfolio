@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>سيزر جيم كلوب — حملة سوشيال ميديا 30 يوم (فيسبوك + إنستجرام)</title>
+<meta name="description" content="حملة تسويقية كاملة لـ سيزر جيم كلوب: تحليل البراند، الاستراتيجية، خطة محتوى 30 يوم، ومحتوى جاهز للنشر على فيسبوك وإنستجرام." />
+<style>
+  :root{
+    --ink:#0E0E10;
+    --ink-2:#1A1B1F;
+    --paper:#F6F7F9;
+    --card:#FFFFFF;
+    --line:#E6E8EC;
+    --muted:#5B6470;
+    --text:#23262C;
+    --brand:#8DC63F;        /* أخضر سيزر الليموني (من اللوجو) */
+    --brand-2:#5E8B1E;      /* أخضر غامق — للنصوص والروابط على الأبيض */
+    --brand-ink:#1E1E20;    /* الفحمي — الهوية الثانية */
+    --accent:#13C28B;
+    --accent-2:#0FB5FF;
+    --warn:#F5A623;
+    --danger:#E5484D;
+    --radius:16px;
+    --shadow:0 1px 2px rgba(16,18,24,.04),0 8px 24px rgba(16,18,24,.06);
+    --maxw:1100px;
+    --font:"Segoe UI","Tahoma",Tahoma,Arial,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--text);
+    font-family:var(--font); line-height:1.75; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .ltr{direction:ltr; unicode-bidi:isolate}
+  a{color:var(--brand-2); text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3,h4{line-height:1.3; color:var(--ink); margin:0 0 .4em}
+  h2{font-size:1.7rem}
+  h3{font-size:1.22rem; margin-top:1.4em}
+  h4{font-size:.82rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em}
+  p{margin:.5em 0}
+  small{color:var(--muted)}
+  code{background:#EEF0F3; padding:.12em .4em; border-radius:6px; font-size:.9em; font-family:ui-monospace,Consolas,monospace; direction:ltr; display:inline-block}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 22px}
+  .layout{max-width:1280px; margin:0 auto; padding:0 22px; display:grid; grid-template-columns:248px 1fr; gap:36px; align-items:start}
+  @media(max-width:980px){ .layout{grid-template-columns:1fr; padding:0 16px} nav.toc{position:static !important; max-height:none !important} }
+
+  header.hero{
+    background:
+      radial-gradient(900px 380px at 20% -10%, rgba(141,198,63,.30), transparent 60%),
+      radial-gradient(700px 320px at 100% 0%, rgba(141,198,63,.12), transparent 55%),
+      linear-gradient(180deg,#0E0E10,#17181C);
+    color:#fff; padding:64px 0 54px; border-bottom:4px solid var(--brand);
+  }
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:700;letter-spacing:.04em;color:#fff;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);padding:7px 14px;border-radius:999px}
+  .hero h1{color:#fff; font-size:2.7rem; margin:18px 0 10px; max-width:20ch}
+  .hero p.lead{color:#D7DBE0; font-size:1.18rem; max-width:64ch}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#EAECEF;padding:8px 13px;border-radius:999px;font-size:.88rem}
+  .pill b{color:#fff}
+
+  nav.toc{position:sticky; top:18px; align-self:start; max-height:calc(100vh - 36px); overflow:auto; background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:16px 14px; box-shadow:var(--shadow); font-size:.94rem}
+  nav.toc h4{margin:.2em 0 .8em; color:var(--ink)}
+  nav.toc ol{list-style:none; margin:0; padding:0; counter-reset:s}
+  nav.toc li{margin:2px 0}
+  nav.toc a{display:block; color:var(--text); padding:7px 10px; border-radius:9px; counter-increment:s}
+  nav.toc a::before{content:counter(s) "."; color:var(--brand-2); font-weight:700; margin-left:8px}
+  nav.toc a:hover{background:#F2F4F7; text-decoration:none}
+
+  main{padding:42px 0 80px; min-width:0}
+  section{margin:0 0 46px; scroll-margin-top:18px}
+  .section-num{color:var(--brand-2); font-weight:800; font-size:.9rem; letter-spacing:.04em}
+
+  .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px 24px; box-shadow:var(--shadow); margin:16px 0}
+  .grid{display:grid; gap:16px}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:760px){ .g2,.g3,.g4{grid-template-columns:1fr} .hero h1{font-size:2rem} }
+
+  .callout{border-right:4px solid var(--brand); background:#F2F8E7; padding:14px 18px; border-radius:12px 0 0 12px; margin:16px 0}
+  .callout.info{border-color:var(--accent-2); background:#EFF9FF}
+  .callout.ok{border-color:var(--accent); background:#EEFBF5}
+  .callout.warn{border-color:var(--warn); background:#FFF8EC}
+
+  .chip{display:inline-block; font-size:.74rem; font-weight:700; padding:3px 9px; border-radius:999px; white-space:nowrap}
+  .c-green{background:#E4F8EF;color:#0A7F58;border:1px solid #BFEBD7}
+  .c-yellow{background:#FFF3D6;color:#9A6B00;border:1px solid #F3DEA6}
+  .c-red{background:#FDE7E8;color:#B42A2F;border:1px solid #F4C4C6}
+  .c-ink{background:#EAEDF1;color:#2A2E35;border:1px solid #D9DEE5}
+  .legend .chip{margin-left:6px}
+
+  .pdot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-left:7px;vertical-align:middle}
+  .p-edu{background:#0FB5FF} .p-proof{background:#13C28B} .p-bts{background:#9B6BFF} .p-eng{background:#FF5A1F} .p-promo{background:#E5484D}
+
+  table{width:100%; border-collapse:collapse; font-size:.93rem; margin:10px 0; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden}
+  th,td{text-align:right; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top}
+  th{background:#F3F5F8; font-size:.78rem; text-transform:uppercase; letter-spacing:.02em; color:var(--muted)}
+  tr:last-child td{border-bottom:none}
+  .cal th:first-child, .cal td:first-child{white-space:nowrap}
+  .tbl-scroll{overflow-x:auto; border-radius:12px}
+
+  .post{border:1px solid var(--line); border-radius:14px; overflow:hidden; margin:18px 0; background:#fff}
+  .post .ph{display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:space-between; padding:12px 16px; background:#0E0E10; color:#fff}
+  .post .ph .t{font-weight:700}
+  .post .pb{padding:16px 18px}
+  .post .copy{background:#FBFCFD; border:1px dashed #D7DCE3; border-radius:10px; padding:14px 16px; margin:10px 0; white-space:pre-wrap}
+  .post .label{font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--muted);margin:14px 0 4px}
+  .hashtags{font-size:.9rem;color:#1666c9;word-spacing:2px; direction:ltr; text-align:right; unicode-bidi:plaintext}
+  .hashtags.ar{direction:rtl}
+  .platform{font-size:.74rem;font-weight:700;padding:3px 9px;border-radius:6px; direction:ltr; display:inline-block}
+  .fb{background:#1877F2;color:#fff} .ig{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);color:#fff} .both{background:#23262C;color:#fff}
+
+  .kpi{background:linear-gradient(180deg,#fff,#FBFCFD); border:1px solid var(--line); border-radius:14px; padding:18px; text-align:center}
+  .kpi .n{font-size:1.9rem;font-weight:800;color:var(--ink)}
+  .kpi .l{font-size:.84rem;color:var(--muted)}
+
+  .checklist{list-style:none;padding:0;margin:8px 0}
+  .checklist li{padding:7px 30px 7px 0; position:relative; border-bottom:1px dashed var(--line)}
+  .checklist li:before{content:"☐"; position:absolute; right:0; top:6px; color:var(--brand-2); font-size:1.1rem}
+  .checklist li:last-child{border-bottom:none}
+
+  .num-list{counter-reset:n; list-style:none; padding:0}
+  .num-list li{position:relative; padding:6px 44px 6px 0; margin:6px 0}
+  .num-list li:before{counter-increment:n; content:counter(n); position:absolute; right:0; top:4px; width:28px;height:28px; background:var(--brand); color:#11260a; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:.85rem}
+
+  .week-head{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:26px 0 6px}
+  .week-head .wk{background:var(--ink); color:#fff; font-weight:800; padding:6px 14px; border-radius:10px; font-size:.9rem}
+  .week-head .theme{font-weight:700; color:var(--ink)}
+  .week-head .dates{color:var(--muted); font-size:.9rem}
+
+  .toolbar{position:fixed; left:18px; bottom:18px; display:flex; gap:8px; z-index:50}
+  .btn{background:var(--ink); color:#fff; border:none; padding:11px 16px; border-radius:999px; font-weight:700; cursor:pointer; box-shadow:var(--shadow); font-size:.88rem; font-family:inherit}
+  .btn.brand{background:var(--brand); color:#11260a}
+  .btn:hover{opacity:.92}
+
+  footer{border-top:1px solid var(--line); padding:26px 0; color:var(--muted); font-size:.9rem}
+  ul.tight li{margin:3px 0}
+  ul{padding-right:22px; padding-left:0}
+  .fillin{background:#FFFBEA;border:1px dashed #E7CF7A;border-radius:6px;padding:1px 7px;font-weight:600;color:#8a6400}
+
+  @media print{
+    nav.toc,.toolbar,.hero .meta{display:none}
+    body{background:#fff} .card,.post,table{box-shadow:none}
+    .layout{grid-template-columns:1fr}
+    a{color:var(--ink)}
+    section{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">🔥 حملة سوشيال ميديا · 30 يوم</span>
+    <h1>سيزر جيم كلوب — حملة نمو على فيسبوك وإنستجرام</h1>
+    <p class="lead">من تحليل البراند لحد خطة محتوى يومية جاهزة تبدأ تنشرها يوم الإثنين <b>8 يونيو 2026</b>. كل الحملة مبنية على فكرة واحدة قوية: <b>«تحدي سيزر صيف شريد»</b>.</p>
+    <div class="meta">
+      <span class="pill">📘 <b>فيسبوك:</b>&nbsp;<span class="ltr">/Cezar.Gym.Club</span></span>
+      <span class="pill">📸 <b>إنستجرام:</b>&nbsp;<span class="ltr">@cezar_gym</span></span>
+      <span class="pill">🗓️ <b>المدة:</b>&nbsp;8 يونيو – 7 يوليو 2026</span>
+      <span class="pill">🌍 <b>اللغة:</b>&nbsp;عربي</span>
+      <span class="pill">🎯 <b>الهدف:</b>&nbsp;اشتراكات + انتشار محلي</span>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="فهرس">
+    <h4>محتويات الحملة</h4>
+    <ol>
+      <li><a href="#summary">الملخص التنفيذي</a></li>
+      <li><a href="#config">طريقة الاستخدام + بيانات البراند</a></li>
+      <li><a href="#analysis">تحليل البراند والسوق</a></li>
+      <li><a href="#profiles">تحسين الصفحات</a></li>
+      <li><a href="#strategy">الاستراتيجية وأعمدة المحتوى</a></li>
+      <li><a href="#campaign">حملة «صيف شريد»</a></li>
+      <li><a href="#calendar">خطة المحتوى 30 يوم</a></li>
+      <li><a href="#library">محتوى جاهز للنشر</a></li>
+      <li><a href="#reels">سكربتات الريلز والستوري</a></li>
+      <li><a href="#workflow">خطة الإنتاج</a></li>
+      <li><a href="#measure">القياس ومؤشرات الأداء</a></li>
+      <li><a href="#appendix">ملحق: الهاشتاجات والأفكار</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <!-- 1 -->
+    <section id="summary">
+      <span class="section-num">القسم 01</span>
+      <h2>الملخص التنفيذي — الخلاصة باختصار</h2>
+      <div class="card">
+        <p><b>الفكرة الأساسية:</b> نطلق حملة واحدة محورية ومناسبة للموسم — <b>«تحدي سيزر صيف شريد»</b> (برنامج تحوّل لمدة 30 يوم) — ونستخدمها كمحرّك لكل المحتوى على المنصتين. التحدي بيشتغل في نفس الوقت كـ <em>مغناطيس عملاء</em> (بيجيب اشتراكات)، و<em>مصنع محتوى</em> (تسجيلات يومية ونصايح وتحولات)، و<em>أداة بناء مجتمع</em> (المشتركين بينشروا ويعملوا تاج للجيم).</p>
+        <div class="grid g4" style="margin-top:14px">
+          <div class="kpi"><div class="n">30</div><div class="l">يوم بفكرة واحدة</div></div>
+          <div class="kpi"><div class="n">~46</div><div class="l">بوست مكتوب/مخطط</div></div>
+          <div class="kpi"><div class="n">2</div><div class="l">منصة بدور مختلف</div></div>
+          <div class="kpi"><div class="n">5</div><div class="l">أعمدة محتوى</div></div>
+        </div>
+        <h4 style="margin-top:18px">ليه الخطة دي بتكسب لجيم محلي</h4>
+        <ul class="tight">
+          <li><b>إنستجرام = واجهة العرض</b> (ريلز للوصول، كاروسيل للحفظ، ستوري للمجتمع اليومي). <b>فيسبوك = مركز الثقة والتحويل المحلي</b> (إيفنت، حكايات أطول، تقييمات، استقبال العملاء على ماسنجر/واتساب). نفس الحملة لكن متكيّفة لكل منصة — ممنوع نسخ ولصق.</li>
+          <li><b>الصيف في منطقتنا = ذروة الرغبة في «جسم الصيف».</b> المدارس خلصت، الطلبة فاضيين، والجو بيخلّي الناس تفكر في البحر والمصيف. الطلب موجود أصلاً — الحملة بس بتلتقطه.</li>
+          <li><b>التحويل مبني جوّه الخطة:</b> كل أسبوع بينتهي بخطوة واضحة — احجز مكانك في التحدي، احجز حصة تجريبية مجانية، أو اشترك بعرض المؤسّسين — وكلها بتتجمّع على الرسائل وواتساب.</li>
+        </ul>
+        <div class="callout ok">
+          <b>✅ الخطة دي مبنية على أوديت حقيقي للحساب.</b> راجعت صفحتَي سيزر على إنستجرام وفيسبوك ووثّقت الأرقام والمحتوى الفعلي، والتشخيص تحت طالع من المعاينة دي مش من فراغ. الحاجة المعلّمة <span class="chip c-green">🟢</span> ممارسة مثبتة، و<span class="chip c-yellow">🟡</span> معناها جرّبها وقيس على جمهورك.</div>
+        <p class="legend"><b>دليل الثقة:</b> <span class="chip c-green">🟢 ممارسة مثبتة</span> <span class="chip c-yellow">🟡 جرّبها مع جمهورك</span></p>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section id="config">
+      <span class="section-num">القسم 02</span>
+      <h2>بيانات البراند ونظرة سريعة</h2>
+      <p>دي البطاقة المرجعية للحملة — البيانات الثابتة اللي بترجعلها كل المحتوى والإجراءات. <b>الخانة الأخيرة (السعر/العرض/المواعيد)</b> بيحدّدها صاحب الجيم لإنها بتتغيّر، والباقي مثبّت من معاينة الحساب.</p>
+      <div class="card">
+        <h3 style="margin-top:0">📋 بيانات البراند</h3>
+        <div class="tbl-scroll">
+        <table>
+          <tr><th>البند</th><th>القيمة</th><th>بتستخدم في</th></tr>
+          <tr><td>اسم الجيم</td><td>سيزر جيم كلوب <span class="ltr">(Cezar Gym Club)</span></td><td>كل مكان</td></tr>
+          <tr><td>المدينة / المنطقة</td><td>بني سويف — شرق النيل</td><td>هاشتاجات المكان والاستهداف</td></tr>
+          <tr><td>العنوان</td><td>مدينة بني سويف الجديدة – شرق النيل – الحي الأول – بجوار كافيار</td><td>صفحة فيسبوك + الخرائط</td></tr>
+          <tr><td>واتساب / تواصل</td><td><span class="ltr">0109 741 9761</span> · <code>wa.me/201097419761</code></td><td>الـ CTA الأساسي / استقبال العملاء</td></tr>
+          <tr><td>القنوات</td><td>فيسبوك <span class="ltr">/Cezar.Gym.Club</span> · إنستجرام <span class="ltr">@cezar_gym</span></td><td>النشر والتفاعل</td></tr>
+          <tr><td>المدرب</td><td>كابتن عبدالله ياسر — كروس فيت ولياقة وظيفية</td><td>بوستات تعريف المدرب</td></tr>
+          <tr><td>هوية البراند</td><td>«جوّاك محارب» — خوذة القيصر المحارب (اللوجو)</td><td>التموضع ونبرة المحتوى</td></tr>
+          <tr><td>ألوان البراند</td><td><span class="ltr">#8DC63F</span> أخضر ليموني · <span class="ltr">#1E1E20</span> فحمي · أبيض</td><td>كل الجرافيك والقوالب</td></tr>
+          <tr><td>العرض / السعر / المواعيد</td><td>يحدّدها صاحب الجيم قبل الإطلاق (متغيّرة)</td><td>بوستات العروض</td></tr>
+        </table>
+        </div>
+        <div class="callout info">💡 <b>التموضع:</b> سيزر عنده أصل قوي محدش بيستغله صح — <b>هوية «المحارب»</b> + <b>مجتمع محلي في شرق النيل</b>. الحملة بتبني عليهم بدل الشعارات العامة.</div>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section id="analysis">
+      <span class="section-num">القسم 03</span>
+      <h2>تحليل البراند والسوق</h2>
+
+      <h3>3.1 تحليل الوضع الحالي — من معاينة الحساب</h3>
+      <div class="card">
+        <p>سيزر جيم كلوب <b>جيم محلي قائم على المجتمع</b> في بني سويف (شرق النيل) بيتنافس في سوق لياقة مزدحم وحسّاس للسعر. القناتين (فيسبوك + إنستجرام) هما الواجهة لبيزنس قرار الشراء فيه <em>محلي وعاطفي وقائم على الثقة</em> — الناس بتشترك في جيم قريب منها، بيديره ناس بيحبوهم، وبيشوفوا فيه حد زيهم وصل لنتيجة.</p>
+        <div class="grid g4" style="margin:6px 0 14px">
+          <div class="kpi"><div class="n">2,366</div><div class="l">متابع (إنستجرام)</div></div>
+          <div class="kpi"><div class="n">297</div><div class="l">بوست منشور</div></div>
+          <div class="kpi"><div class="n">1K–7.6K</div><div class="l">مشاهدات الريل</div></div>
+          <div class="kpi"><div class="n">0</div><div class="l">following · صفر تفاعل خارجي</div></div>
+        </div>
+        <p><b>الخلاصة:</b> الوصول كويس فعلاً (الريلز بتجيب آلاف، وأحيانًا أكتر من عدد المتابعين) — <b>المشكلة في التحويل مش في الوصول</b>. 297 بوست وآلاف المشاهدات ولسه 2,366 متابع: المحتوى بيتفرّج عليه وبيعدّي، مش بيحوّل لمتابعة ولا تفاعل ولا رسالة. فوظيفة الحملة: <b>(1)</b> نخلي المحتوى يوقّف ويتفاعل، <b>(2)</b> نبني ثقة بسرعة، <b>(3)</b> نخلي الخطوة الجاية (رسالة/واتساب) سهلة جدًا.</p>
+      </div>
+
+      <h3>3.2 تحليل سوات (SWOT)</h3>
+      <div class="grid g2">
+        <div class="card" style="border-top:3px solid var(--accent)">
+          <h4 style="color:var(--accent)">نقاط القوة</h4>
+          <ul class="tight">
+            <li>وجود محلي ومجتمع/أعضاء حاليين (دليل اجتماعي ومصدر محتوى جاهز)</li>
+            <li>قناتين شغّالين بالفعل</li>
+            <li>منتج بصري ومناسب للفيديو — الجيم متعمل علشان الريلز</li>
+            <li>التحولات الحقيقية = أقوى محتوى ممكن، وهو ببلاش</li>
+          </ul>
+        </div>
+        <div class="card" style="border-top:3px solid var(--danger)">
+          <h4 style="color:var(--danger)">نقاط الضعف <small>(من المعاينة)</small></h4>
+          <ul class="tight">
+            <li>~90% من المحتوى بوسترات AI غامقة (محارب/سبارتن) تتفرّج عليها — بدون hook أو معلومة أو CTA</li>
+            <li>شعارات إنجليزي لجمهور عربي محلي («FORGE your EMPIRE») — مش بتتكلم بلغته</li>
+            <li>كابشن مدح ذاتي بلا دليل («أقوى وأفضل جيم») — جملة كل الجيمات بتقولها</li>
+            <li>صفر تفاعل خارجي (0 following) + رد ضعيف على الكومنتات</li>
+            <li>البروفايل مش بيلتقط الزائر ولا بيحوّله لرسالة</li>
+          </ul>
+        </div>
+        <div class="card" style="border-top:3px solid var(--accent-2)">
+          <h4 style="color:var(--accent-2)">الفرص</h4>
+          <ul class="tight">
+            <li><b>موسم «جسم الصيف»</b> — ذروة الرغبة من يونيو لأغسطس</li>
+            <li>الوصول موجود بالفعل (آلاف المشاهدات) — محتاج بس يتحوّل بهوك وCTA</li>
+            <li><b>طلاب الجامعات</b> — جمهور حقيقي بيتفاعل مع عروضهم، والصيف إجازتهم <span class="chip c-yellow">🟡</span></li>
+            <li>إعلانات ميتا المحلية الرخيصة (تمويل أحسن بوست لنطاق 5–10 كم)</li>
+            <li>محتوى المستخدمين: حوّل كل تحوّل لعضو لبوست</li>
+          </ul>
+        </div>
+        <div class="card" style="border-top:3px solid var(--warn)">
+          <h4 style="color:var(--warn)">التهديدات</h4>
+          <ul class="tight">
+            <li>منافسة سعرية من جيمات قريبة وسلاسل اقتصادية</li>
+            <li>تسرّب موسمي (ناس بتسيب بعد الصيف)</li>
+            <li>الاعتماد على الخوارزمية — نخفّفه بجمع أرقام واتساب</li>
+            <li>ملل الإعلانات لو الصفحة بقت كلها «اشترك دلوقتي»</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>3.3 المنافسين المحليين في بني سويف</h3>
+      <div class="card">
+        <p>أهم الجيمات المنافسة في بني سويف وزاويتها، وفين الفرصة المفتوحة لسيزر:</p>
+        <div class="tbl-scroll">
+        <table>
+          <tr><th>المنافس</th><th>زاويته الأساسية</th><th>الفجوة = فرصة سيزر</th></tr>
+          <tr><td>Hammer Gym B.N.S</td><td>الحجم والتجهيزات</td><td>أجهزة من غير مجتمع ولا متابعة شخصية</td></tr>
+          <tr><td>River Health Club</td><td>فخامة / سبا / لِست منظمة</td><td>سعره أعلى وبعيد عن جمهور شرق النيل</td></tr>
+          <tr><td>Core Gym</td><td>فرع جديد في بني سويف</td><td>لسه بيبني سمعة وأعضاء — مفيش دليل نتائج</td></tr>
+          <tr><td>Zeus Gym</td><td>حرب أسعار (≈100 ج/شهر)</td><td>رخيص بس بلا قيمة مضافة ولا تجربة</td></tr>
+          <tr><td>FitZone</td><td>سيدات فقط</td><td>بيخدم شريحة واحدة — سيزر يكسب باقي السوق</td></tr>
+        </table>
+        </div>
+        <div class="callout ok"><b>التموضع الفائز:</b> محدش بيجمع بين <b>النتائج المثبتة + التعليم + المجتمع</b> في صفحة واحدة. ده الفراغ اللي الحملة بتملاه — بهوية «المحارب» بتاعة سيزر.</div>
+      </div>
+
+      <h3>3.4 الجمهور المستهدف — 3 شخصيات</h3>
+      <div class="grid g3">
+        <div class="card">
+          <h4>💪 «سامح» الطالب اللي عايز شريد للصيف</h4>
+          <p><b>18–25 سنة، طالب جامعة.</b> فاضي في الإجازة وعايز نتيجة واضحة قبل الصيف. عايش على إنستجرام وتيك توك. بيتحفّز بالتحولات والتريندات والسعر — وهو فعلاً بيتفاعل مع عروض الطلاب.</p>
+          <p><small><b>الهوك اللي بيشتغل:</b> نتايج سريعة، تحدي، انتماء، عرض طلاب.</small></p>
+        </div>
+        <div class="card">
+          <h4>🔰 «أحمد» المبتدئ المتوتر</h4>
+          <p><b>22–35 سنة، أول مرة (أو راجع بعد انقطاع).</b> عايز يبدأ بس خايف من رهبة الجيم وإنه «مش في فورمة». محتاج طمأنة، خطة واضحة للمبتدئين، وإحساس إنه مش هيتحرج.</p>
+          <p><small><b>الهوك اللي بيشتغل:</b> «كله بيبدأ من هنا»، خطة أول أسبوع، قصص مبتدئين حقيقية.</small></p>
+        </div>
+        <div class="card">
+          <h4>🏋️ «كريم» اللاعب الجاد</h4>
+          <p><b>22–38 سنة، لاعب خبرة.</b> بيهتم بجودة الأجهزة، خبرة المدرب، والجو. ممكن يغيّر جيم علشان السيتب الصح. قيمته عالية وبيرشّح غيره.</p>
+          <p><small><b>الهوك اللي بيشتغل:</b> أجهزة، خبرة كابتن عبدالله، عمق التدريب، المجتمع.</small></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section id="profiles">
+      <span class="section-num">القسم 04</span>
+      <h2>تحسين الصفحات (اعملها قبل اليوم الأول)</h2>
+      <p>الوصول بيتهدر لو الصفحة مش بتحوّل الزيارة. المنصتين بيتظبطوا في <b>أقل من ساعة</b>.</p>
+
+      <div class="grid g2">
+        <div class="card">
+          <h4><span class="platform ig">Instagram</span> &nbsp; <span class="ltr">@cezar_gym</span></h4>
+          <ul class="checklist">
+            <li><b>حوّل الحساب لحساب Business/أعمال</b> (مجانًا) — بيفتح التحليلات وأزرار التواصل والإعلانات.</li>
+            <li><b>صيغة البايو:</b> بتعمل إيه + لمين + فين + دعوة لإجراء.</li>
+            <li><b>لينك البايو:</b> لينك واتساب مباشر (<code>wa.me/201097419761</code>) أو صفحة لينكات مجانية فيها: واتساب، الموقع/الخرائط، الأسعار، المواعيد.</li>
+            <li><b>4 هايلايتس:</b> 🔥 التحدي · 📍 العنوان/المواعيد · 💬 التقييمات · 🏋️ الكلاسات.</li>
+            <li><b>ثبّت 3 بوستات:</b> إطلاق التحدي، أحسن تحوّل، وبوست «ليه سيزر».</li>
+            <li><b>صورة البروفايل:</b> اللوجو على خلفية سادة، نفس صورة فيسبوك بالظبط.</li>
+          </ul>
+          <div class="copy"><b>مثال بايو (عدّله):</b>
+🔥 سيزر جيم كلوب | بني سويف
+هنا بني سويف بتبقى أقوى 💪 تدريب بمدرب · كلاسات · نتايج
+👇 احجز جلستك التجريبية مجانًا
+📲 واتساب 0109 741 9761</div>
+        </div>
+
+        <div class="card">
+          <h4><span class="platform fb">Facebook</span> &nbsp; <span class="ltr">/Cezar.Gym.Club</span></h4>
+          <ul class="checklist">
+            <li><b>التصنيف:</b> جيم/مركز لياقة. اكمل <b>كل</b> خانات «حول» (ده سيو محلي).</li>
+            <li><b>العنوان + دبوس الخريطة + المواعيد + التليفون + واتساب</b> كلها متكتوبة.</li>
+            <li><b>زر الإجراء:</b> اختار <b>«إرسال رسالة واتساب»</b> أو «احجز الآن».</li>
+            <li><b>صورة/فيديو الغلاف:</b> بانر تحدي الصيف (أو مونتاج 10 ثواني للجيم).</li>
+            <li><b>فعّل التقييمات/التوصيات</b> وكلّم 5 أعضاء مبسوطين يكتبوا تقييم الأسبوع ده.</li>
+            <li><b>اعمل إيفنت على فيسبوك</b> لإطلاق التحدي (وصول مجاني + تذكيرات).</li>
+            <li><b>فكّر في جروب خاص</b> «عيلة سيزر» للأعضاء ← ولاء + محتوى مستخدمين.</li>
+          </ul>
+          <div class="callout info" style="margin-bottom:0">📘 فيسبوك لسه بيجيب <b>اكتشاف وثقة محلية</b> في السوق العربي — متهملوش. التقييمات والإيفنتات هنا دهب للتحويل.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section id="strategy">
+      <span class="section-num">القسم 05</span>
+      <h2>الاستراتيجية وأعمدة المحتوى</h2>
+
+      <h3>5.1 الأهداف ومؤشرات الأداء (مستهدفات 30 يوم)</h3>
+      <div class="card">
+        <p>المستهدفات دي محسوبة على نقطة بداية سيزر الحالية (آلاف المشاهدات بتحويل ضعيف). راجعها شهريًا وارفعها مع التقدّم: <span class="chip c-yellow">🟡 جرّب وقيس</span></p>
+        <div class="tbl-scroll">
+        <table>
+          <tr><th>الهدف</th><th>المؤشر</th><th>مستهدف 30 يوم</th><th>ليه مهم</th></tr>
+          <tr><td>الوعي</td><td>الوصول / الحسابات الموصولة</td><td>+40–80% عن الشهر السابق</td><td>الريلز والتمويل بيوسّعوا الوصول المحلي</td></tr>
+          <tr><td>الجمهور</td><td>نمو المتابعين</td><td>+8–15%</td><td>متابعين محليين مهتمين — مش أرقام فاضية</td></tr>
+          <tr><td>التفاعل</td><td>معدل التفاعل (إنستجرام)</td><td>أكبر من 3–5% للبوست</td><td>بيدّي إشارة للخوارزمية إنك مهم</td></tr>
+          <tr><td>الطلب</td><td>رسائل / استفسارات واتساب</td><td>80–120 رسالة</td><td>المؤشر الحقيقي للمبيعات</td></tr>
+          <tr><td>التحويل</td><td>اشتراكات التحدي / حصص تجريبية</td><td>30–50 اشتراك</td><td>نتيجة البيزنس</td></tr>
+          <tr><td>الإثبات</td><td>تقييمات جوجل/فيسبوك جديدة</td><td>+10</td><td>ثقة بتتراكم للشهور الجاية</td></tr>
+        </table>
+        </div>
+      </div>
+
+      <h3>5.2 التموضع والرسالة الأساسية</h3>
+      <div class="card">
+        <p>جملة واحدة كل حاجة بترجع لها (عدّلها لحقيقتك):</p>
+        <div class="callout" style="font-size:1.08rem">
+          <b>«سيزر جيم كلوب — بيتك في بني سويف علشان توصل لنتيجة حقيقية، مع مدربين بيهتموا بيك فعلاً، وفي مكان بتحس فيه إنك في عيلة.»</b>
+        </div>
+        <p>3 زوايا للرسالة، واحدة لكل شخصية: <b>النتيجة</b> (سامح) · <b>الترحيب والأمان</b> (نور) · <b>التدريب الجاد والأجهزة</b> (كريم). كل بوست بيركّز على واحدة منهم.</p>
+      </div>
+
+      <h3>5.3 أعمدة المحتوى — توزيع 40 / 20 / 15 / 15 / 10 <span class="chip c-green">🟢</span></h3>
+      <p>خلي المحتوى الترويجي حوالي 10% بس. لو الصفحة بقت حاسّة إنها قناة إعلانات، الناس بتبطّل متابعة. القيمة هي اللي بتدّيك الحق إنك تبيع.</p>
+      <div class="tbl-scroll">
+      <table>
+        <tr><th>العمود</th><th>النسبة</th><th>وظيفته</th><th>أمثلة</th></tr>
+        <tr><td><span class="pdot p-edu"></span><b>تعليمي / قيمة رياضية</b></td><td>40%</td><td>تعلّم وتكسب ثقة</td><td>شرح أداء تمرين، «5 أخطاء»، نصايح تغذية، تصحيح مفاهيم</td></tr>
+        <tr><td><span class="pdot p-proof"></span><b>تحولات / دليل اجتماعي</b></td><td>20%</td><td>تثبت إنه بيشتغل</td><td>قبل/بعد، قصص أعضاء، شهادات، تقييمات</td></tr>
+        <tr><td><span class="pdot p-bts"></span><b>كواليس / مجتمع</b></td><td>15%</td><td>تبني ثقة وانتماء</td><td>مدربين، المكان، تكريم أعضاء، يوم في الجيم</td></tr>
+        <tr><td><span class="pdot p-eng"></span><b>تفاعل / تحفيز</b></td><td>15%</td><td>تبدأ نقاشات</td><td>تصويتات، «ده ولا ده»، اقتباسات، أسئلة، تحديات</td></tr>
+        <tr><td><span class="pdot p-promo"></span><b>ترويج / عروض</b></td><td>10%</td><td>تحرّك الإجراء</td><td>اشتراك التحدي، عرض العضوية، جدول الكلاسات</td></tr>
+      </table>
+      </div>
+
+      <h3>5.4 دور كل منصة ومعدل النشر <span class="chip c-green">🟢</span></h3>
+      <div class="grid g2">
+        <div class="card">
+          <h4><span class="platform ig">Instagram</span> — محرّك الوصول والرغبة</h4>
+          <ul class="tight">
+            <li><b>المنشورات:</b> 5–6 مرات/أسبوع (ريلز 3–4 + كاروسيل/صور)</li>
+            <li><b>ستوري:</b> 2–4 مرات/يوم (تصويت، كواليس، عداد، إعادة نشر تاجات الأعضاء)</li>
+            <li><b>الريلز أولوية رقم 1</b> للاكتشاف — على الأقل 3/أسبوع</li>
+            <li>أفضل أوقات <span class="chip c-yellow">🟡</span>: <b>1–3 ظهرًا</b> و<b>8–11 مساءً</b> (محلي)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4><span class="platform fb">Facebook</span> — مركز الثقة والتحويل</h4>
+          <ul class="tight">
+            <li><b>المنشورات:</b> 5–6 مرات/أسبوع (اكيّف بوستات إنستجرام؛ كابشن أطول مقبول)</li>
+            <li><b>إيفنت واحد</b> (إطلاق التحدي) + تذكيرات</li>
+            <li><b>التقييمات</b> محرّك أساسي: اطلب من الأعضاء أسبوعيًا</li>
+            <li>الفيديو الأصلي أحسن من اللينكات. رد على كل تعليق ورسالة في أقل من ساعتين.</li>
+            <li>موّل أحسن 1–2 بوست/أسبوع لنطاق محلي <span class="chip c-yellow">🟡</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><b>القاعدة الذهبية:</b> ممنوع نسخ ولصق بين المنصتين. ممكن تشارك الريل على فيسبوك، بس قلّل الهاشتاجات (فيسبوك 2–3، إنستجرام 8–15)، واكتب كابشن فيسبوك أطول وأدفى شوية للجمهور الأكبر سنًّا والعائلي.</div>
+
+      <h3>5.5 استراتيجية الهاشتاجات <span class="chip c-green">🟢</span></h3>
+      <div class="card">
+        <p>على إنستجرام، استخدم <b>8–15 هاشتاج</b> بأحجام مختلفة علشان تظهر في مجموعات صغيرة تقدر تكسبها <em>و</em> توصل للكبيرة. البنك الكامل في <a href="#appendix">الملحق</a>.</p>
+        <ul class="tight">
+          <li><b>براند:</b> <span class="ltr">#CezarGym #CezarGymClub #CezarSummerShred</span> · <span class="hashtags ar" style="display:inline">#سيزر_جيم #تحدي_سيزر</span></li>
+          <li><b>محلي (أقوى أداة عندك):</b> <span class="hashtags ar" style="display:inline">#جيم_بني_سويف #لياقة_بني_سويف</span></li>
+          <li><b>متخصص:</b> <span class="hashtags ar" style="display:inline">#تخسيس #كمال_اجسام #تمارين</span></li>
+          <li><b>واسع:</b> <span class="ltr">#fitness #gym #workout #fitnessmotivation</span></li>
+        </ul>
+      </div>
+
+      <h3>5.6 خطة التفاعل والمجتمع (النص اللي محدش بيعمله)</h3>
+      <div class="card">
+        <p>النشر من غير تفاعل = إذاعة مش سوشيال ميديا. خصص <b>15–20 دقيقة/يوم</b>:</p>
+        <ul class="tight">
+          <li>رد على <b>كل</b> تعليق ورسالة خلال ساعتين في أوقات العمل (جهّز ردود سريعة على واتساب للسعر/المواعيد/العنوان).</li>
+          <li>رد على التعليقات في <b>أول 30–60 دقيقة</b> بعد النشر — ده بيزوّد الوصول.</li>
+          <li>تفاعل برّه: علّق على حسابات محلية ومطاعم وصفحات رياضة في بني سويف وشرق النيل (10/يوم).</li>
+          <li>أعِد نشر أي عضو يعمل تاج ليك في الستوري. دليل علني + بيخليه ينشر تاني.</li>
+        </ul>
+        <div class="tbl-scroll">
+        <table>
+          <tr><th>نوع الرسالة</th><th>الرد</th></tr>
+          <tr><td>«بكام / فين / المواعيد إيه؟»</td><td>رد بسرعة + اعزمه على حصة تجريبية مجانية: <em>«أسهل حاجة تيجي تجرّب ببلاش — إمتى يناسبك، الأسبوع ده ولا اللي بعده؟»</em></td></tr>
+          <tr><td>شكوى</td><td>اعترف علنًا، احلها في الخاص، تابع علنًا</td></tr>
+          <tr><td>مدح / تاج</td><td>اشكره + أعِد نشره في الستوري</td></tr>
+          <tr><td>متنمّر</td><td>متطعميهوش. اخفي أو تجاهل إلا لو كلامه غلط في معلومة.</td></tr>
+        </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section id="campaign">
+      <span class="section-num">القسم 06</span>
+      <h2>الحملة المحورية: «تحدي سيزر صيف شريد» 🔥</h2>
+      <div class="card">
+        <p>قصة واحدة بتشيل الـ30 يوم كلهم. كل أسبوع ليه وظيفة، فالمحتوى بيبقى ليه <b>خط حكاية</b> بدل ما يبقى عشوائي — وكل أسبوع بيدفع لإجراء واضح.</p>
+        <div class="grid g4">
+          <div class="card" style="margin:0;border-top:3px solid var(--brand)">
+            <h4>أسبوع 1 · الإطلاق والوعي</h4>
+            <p>أعلن التحدي، عرّف بالبراند، اعمل هايب. <b>الإجراء:</b> احجز مكانك (رسالة/واتساب).</p>
+          </div>
+          <div class="card" style="margin:0;border-top:3px solid var(--accent-2)">
+            <h4>أسبوع 2 · التعليم والقيمة</h4>
+            <p>نصايح تدريب وتغذية مجانية ← ثقة + حفظ + مشاركة. <b>الإجراء:</b> حصة تجريبية مجانية.</p>
+          </div>
+          <div class="card" style="margin:0;border-top:3px solid var(--accent)">
+            <h4>أسبوع 3 · الإثبات والمجتمع</h4>
+            <p>تحولات، قصص أعضاء، تقدّم التحدي، تقييمات. <b>الإجراء:</b> «الأماكن بتخلص».</p>
+          </div>
+          <div class="card" style="margin:0;border-top:3px solid var(--danger)">
+            <h4>أسبوع 4 + 2 · الإقناع والإغلاق</h4>
+            <p>عرض مؤسّسين محدود، إلحاح، تلخيص، الدفعة الجاية. <b>الإجراء:</b> اشترك قبل الميعاد.</p>
+          </div>
+        </div>
+        <div class="callout ok"><b>ليه التحدي أحسن من عروض عشوائية:</b> بيدّي <em>سبب للتحرك دلوقتي</em> (ميعاد نهائي + مجموعة)، وبيصنع دليل اجتماعي (المشتركين بينشروا)، وبيديك 30 يوم محتوى جاهز (اشتراكات ← تمارين ← تقدّم ← نتايج). كمان بيزرع محتوى الشهر <b>اللي بعده</b> (التحولات بتخلص بعدين).</div>
+        <h4>هيكل العرض المقترح</h4>
+        <p>التحدي يتبني من 4 مكوّنات: <b>برنامج 30 يوم بمدرب</b> + <b>متابعة تغذية عملية</b> + <b>تصوير قبل/بعد</b> + <b>عدد أماكن محدود</b> مع <b>جايزة لأحسن تحوّل</b>. الندرة + الجايزة = المحرّك. السعر والجايزة بالظبط بيحدّدهم صاحب الجيم قبل الإطلاق.</p>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section id="calendar">
+      <span class="section-num">القسم 07</span>
+      <h2>خطة المحتوى 30 يوم — 8 يونيو ← 7 يوليو 2026</h2>
+      <p class="legend">الأعمدة: <span class="pdot p-edu"></span>تعليمي <span class="pdot p-proof"></span>إثبات <span class="pdot p-bts"></span>كواليس/مجتمع <span class="pdot p-eng"></span>تفاعل <span class="pdot p-promo"></span>ترويج &nbsp;·&nbsp; <span class="chip c-green">دائم</span> = قابل لإعادة الاستخدام · <span class="chip c-yellow">موقوت</span> = مرتبط بوقت. &nbsp; ★ = النص الكامل في <a href="#library">المكتبة بالأسفل</a>.</p>
+
+      <!-- W1 -->
+      <div class="week-head"><span class="wk">أسبوع 1</span><span class="theme">الإطلاق والوعي</span><span class="dates">الإثنين 8 – الأحد 14 يونيو · الإجراء: احجز مكانك</span></div>
+      <div class="tbl-scroll">
+      <table class="cal">
+        <tr><th>اليوم / التاريخ</th><th>المنصة</th><th>العمود</th><th>الشكل</th><th>الموضوع والهوك</th><th>الدعوة للإجراء</th><th></th></tr>
+        <tr><td><b>الإثنين 8 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-promo"></span>ترويج</td><td>ريل + إيفنت</td><td>🔥 <b>إطلاق التحدي:</b> «30 يوم. جسم جديد. صفر أعذار.» أعلن تحدي سيزر صيف شريد.</td><td>ابعت «شريد» تحجز</td><td>★ <span class="chip c-yellow">موقوت</span></td></tr>
+        <tr><td><b>الثلاثاء 9 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-bts"></span>كواليس</td><td>كاروسيل</td><td>«ليه تتمرن في سيزر؟» — المكان، المدربين، الكلاسات، المجتمع</td><td>زورنا / ابعتلنا</td><td>★ <span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الأربعاء 10 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-proof"></span>إثبات</td><td>صورة/ريل</td><td>تحوّل عضو رقم 1 + قصة قصيرة</td><td>«دورك — ابعتلنا»</td><td>★ <span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الخميس 11 يونيو</b></td><td><span class="platform ig">IG</span> / FB</td><td><span class="pdot p-edu"></span>تعليمي</td><td>ريل (شرح)</td><td>«بطّل تعمل السكوات كده ❌» — تصحيح أداء في 30 ثانية</td><td>احفظ وشير</td><td>★ <span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الجمعة 12 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-eng"></span>تفاعل</td><td>ستوري + بوست</td><td>اقتباس تحفيزي + تصويت: «هدفك الصيف ده؟» (تخسيس / عضل / لياقة)</td><td>صوّت في الستوري</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>السبت 13 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-bts"></span>كواليس</td><td>ريل</td><td>«تخيّل: أول يوم ليك في سيزر» — ترحيبي وبيكسر رهبة الجيم</td><td>تعالى جرّب مجانًا</td><td>★ <span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الأحد 14 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-promo"></span>ترويج</td><td>كاروسيل</td><td>«الأماكن بتملا» — المشمول في التحدي + عداد تنازلي</td><td>واتساب للاشتراك</td><td><span class="chip c-yellow">موقوت</span></td></tr>
+      </table>
+      </div>
+
+      <!-- W2 -->
+      <div class="week-head"><span class="wk">أسبوع 2</span><span class="theme">التعليم والقيمة</span><span class="dates">الإثنين 15 – الأحد 21 يونيو · الإجراء: احجز حصة تجريبية</span></div>
+      <div class="tbl-scroll">
+      <table class="cal">
+        <tr><th>اليوم / التاريخ</th><th>المنصة</th><th>العمود</th><th>الشكل</th><th>الموضوع والهوك</th><th>الدعوة للإجراء</th><th></th></tr>
+        <tr><td><b>الإثنين 15 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-edu"></span>تعليمي</td><td>كاروسيل</td><td>«5 أخطاء بتقتل تخسيسك» — تصحيح مفاهيم</td><td>احفظ ده</td><td>★ <span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الثلاثاء 16 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-edu"></span>تعليمي</td><td>كاروسيل</td><td>«ابنِ عضل بأقل تكلفة — 6 مصادر بروتين رخيصة» (بيض، فول، فراخ، تونة، زبادي…)</td><td>احفظ واعمل تاج لصاحبك</td><td>★ <span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الأربعاء 17 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-bts"></span>كواليس</td><td>ريل</td><td>تعريف بمدرب: «اتعرّفوا على كابتن عبدالله ياسر» + نصيحة سريعة</td><td>احجز حصة</td><td>★ <span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الخميس 18 يونيو</b></td><td><span class="platform ig">IG</span> / FB</td><td><span class="pdot p-edu"></span>تعليمي</td><td>ريل</td><td>«3 تمارين لضهر أقوى» — شرح سريع</td><td>احفظ وجرّب</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الجمعة 19 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-eng"></span>تفاعل</td><td>بوست + تصويت</td><td>«ده ولا ده: كارديو 🆚 أوزان؟» — نقاش</td><td>اكتب اختيارك</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>السبت 20 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-proof"></span>إثبات</td><td>ريل/كاروسيل</td><td>«للمبتدئين: أول أسبوع ليك خطوة بخطوة» — كسر رهبة الجيم</td><td>ابعت «أبدأ»</td><td>★ <span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الأحد 21 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-edu"></span>تعليمي</td><td>كاروسيل</td><td>«محتاج بروتين قد إيه فعلاً؟» حساب بسيط</td><td>احفظ · ابعت لخطة</td><td><span class="chip c-green">دائم</span></td></tr>
+      </table>
+      </div>
+
+      <!-- W3 -->
+      <div class="week-head"><span class="wk">أسبوع 3</span><span class="theme">الإثبات والمجتمع</span><span class="dates">الإثنين 22 – الأحد 28 يونيو · الإجراء: «الأماكن بتخلص»</span></div>
+      <div class="tbl-scroll">
+      <table class="cal">
+        <tr><th>اليوم / التاريخ</th><th>المنصة</th><th>العمود</th><th>الشكل</th><th>الموضوع والهوك</th><th>الدعوة للإجراء</th><th></th></tr>
+        <tr><td><b>الإثنين 22 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-proof"></span>إثبات</td><td>ريل</td><td>كشف تحوّل رقم 2 (قبل ← بعد، صوت تريند)</td><td>«ابدأ تحوّلك — ابعتلنا»</td><td>★ <span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الثلاثاء 23 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-proof"></span>إثبات</td><td>كاروسيل/ستوري</td><td>سكرين شوت تقييمات الأعضاء + طلب تقييم جوجل/فيسبوك</td><td>«اكتبلنا تقييم»</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الأربعاء 24 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-bts"></span>مجتمع</td><td>ريل</td><td>متابعة التحدي: المشتركين في نص البرنامج، مونتاج طاقة</td><td>«ندمت إنك ماشاركتش؟ أماكن جديدة فتحت»</td><td><span class="chip c-yellow">موقوت</span></td></tr>
+        <tr><td><b>الخميس 25 يونيو</b></td><td><span class="platform ig">IG</span> / FB</td><td><span class="pdot p-edu"></span>تعليمي</td><td>ريل</td><td>«3 حلول لدهون البطن العنيدة (لأ، مش بطن)»</td><td>احفظ وشير</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الجمعة 26 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-eng"></span>تفاعل</td><td>سلسلة ستوري</td><td>«اسأل الكابتن» بوكس أسئلة ← الرد في الستوري</td><td>اسأل سؤال</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>السبت 27 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-proof"></span>إثبات</td><td>صورة/ريل</td><td>عضو الأسبوع + نصيحته رقم 1</td><td>«اعمل تاج لحد بيحفّزك»</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الأحد 28 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-promo"></span>ترويج</td><td>كاروسيل</td><td>«آخر أسبوع للاشتراك بسعر المؤسّسين» — بناء إلحاح</td><td>واتساب دلوقتي</td><td><span class="chip c-yellow">موقوت</span></td></tr>
+      </table>
+      </div>
+
+      <!-- W4 -->
+      <div class="week-head"><span class="wk">أسبوع 4</span><span class="theme">الإقناع والإغلاق</span><span class="dates">الإثنين 29 يونيو – الأحد 5 يوليو · الإجراء: اشترك قبل الميعاد</span></div>
+      <div class="tbl-scroll">
+      <table class="cal">
+        <tr><th>اليوم / التاريخ</th><th>المنصة</th><th>العمود</th><th>الشكل</th><th>الموضوع والهوك</th><th>الدعوة للإجراء</th><th></th></tr>
+        <tr><td><b>الإثنين 29 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-promo"></span>ترويج</td><td>ريل/كاروسيل</td><td>🔥 <b>عرض المؤسّسين</b> — هتاخد إيه + السعر + الميعاد النهائي 5 يوليو</td><td>ابعت «اشتراك»</td><td>★ <span class="chip c-yellow">موقوت</span></td></tr>
+        <tr><td><b>الثلاثاء 30 يونيو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-proof"></span>إثبات</td><td>ريل</td><td>كسر اعتراض: «أنا مش في فورمة أبدأ» ← قصة مبتدئ حقيقي</td><td>«كله بيبدأ من هنا — ابعتلنا»</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الأربعاء 1 يوليو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-edu"></span>تعليمي</td><td>كاروسيل</td><td>«خطة أول أسبوع ليك» — قيمة مجانية بتعرض شكل البرنامج</td><td>«عايز الخطة كاملة؟ ابعتلنا»</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>الخميس 2 يوليو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-eng"></span>تفاعل</td><td>عداد ستوري</td><td>«فاضل 3 أيام» ستيكر عداد + رد على الأسئلة الشائعة</td><td>اضغط للمراسلة</td><td><span class="chip c-yellow">موقوت</span></td></tr>
+        <tr><td><b>الجمعة 3 يوليو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-bts"></span>مجتمع</td><td>ريل</td><td>«يوم في سيزر» مونتاج جو — طاقة، كلاسات، ناس</td><td>«تعالى حسّها»</td><td><span class="chip c-green">دائم</span></td></tr>
+        <tr><td><b>السبت 4 يوليو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-promo"></span>ترويج</td><td>بوست + ستوري</td><td>«بكرة بيخلص» — تذكير أخير بالعرض + ندرة</td><td>واتساب دلوقتي</td><td><span class="chip c-yellow">موقوت</span></td></tr>
+        <tr><td><b>الأحد 5 يوليو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-promo"></span>ترويج</td><td>ستوري + بوست</td><td>🚨 <b>آخر يوم</b> — «الباب بيتقفل النهاردة» + تلخيص القيمة</td><td>ابعت قبل نص الليل</td><td>★ <span class="chip c-yellow">موقوت</span></td></tr>
+      </table>
+      </div>
+
+      <!-- W5 -->
+      <div class="week-head"><span class="wk">أسبوع 5</span><span class="theme">الزخم والتالي</span><span class="dates">الإثنين 6 – الثلاثاء 7 يوليو · انتقل للدفعة الجاية</span></div>
+      <div class="tbl-scroll">
+      <table class="cal">
+        <tr><th>اليوم / التاريخ</th><th>المنصة</th><th>العمود</th><th>الشكل</th><th>الموضوع والهوك</th><th>الدعوة للإجراء</th><th></th></tr>
+        <tr><td><b>الإثنين 6 يوليو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-proof"></span>إثبات</td><td>كاروسيل</td><td>«أهلاً بكريو التحدي 🎉» — اعرض الدفعة اللي اشتركت (دليل اجتماعي + فومو)</td><td>«الدفعة الجاية: سجّل في الانتظار»</td><td><span class="chip c-yellow">موقوت</span></td></tr>
+        <tr><td><b>الثلاثاء 7 يوليو</b></td><td><span class="platform both">FB+IG</span></td><td><span class="pdot p-eng"></span>تفاعل</td><td>بوست + تصويت</td><td>«عايزين محتوى إيه الشهر الجاي؟» (تمارين / تغذية / مبتدئين / تحولات)</td><td>صوّت وعلّق</td><td><span class="chip c-green">دائم</span></td></tr>
+      </table>
+      </div>
+
+      <div class="callout info">📌 <b>الستوري بيشتغل يوميًا فوق الخطة دي</b> (مش متكتوب يوم بيوم): مقاطع كواليس، تصويتات، عدادات، إعادة نشر تاجات الأعضاء، وستيكرات «لينك/ابعتلنا». استهدف 2–4 ستوري/يوم على إنستجرام — ده مكان الجمهور القريب منك.</div>
+    </section>
+
+    <!-- 8 -->
+    <section id="library">
+      <span class="section-num">القسم 08</span>
+      <h2>مكتبة محتوى جاهزة للنشر (بالعربي)</h2>
+      <p>جاهزة للنسخ واللصق. مكتوبة بنبرة محلية ودودة على هوية «المحارب» بتاعة سيزر — عدّل اللهجة على ذوقك قبل النشر.</p>
+
+      <!-- 1 -->
+      <div class="post">
+        <div class="ph"><span class="t">★ بوست 1 — إطلاق التحدي</span><span><span class="platform both">FB + IG</span> · ريل + إيفنت · <span class="chip c-yellow">الإثنين 8 يونيو</span></span></div>
+        <div class="pb">
+          <div class="label">الهوك (أول سطر / نص على الشاشة)</div>
+          <div class="copy">30 يوم. جسم جديد. صفر أعذار. 🔥</div>
+          <div class="label">الكابشن</div>
+          <div class="copy">30 يوم. جسم جديد. صفر أعذار. 🔥
+
+تحدي «سيزر صيف شريد» بدأ رسميًا ✅
+
+✅ برنامج تحوّل كامل 30 يوم مع مدرب
+✅ نظام غذائي عملي يناسب يومك
+✅ تصوير قبل وبعد لرحلتك
+🏆 جايزة لأحسن تحوّل
+
+الأماكن محدودة! لما تخلص… تخلص.
+
+👉 ابعتلنا كلمة «شريد» في الرسائل أو واتساب 0109 741 9761 واحجز مكانك دلوقتي.
+📍 سيزر جيم كلوب — بني سويف</div>
+          <div class="label">هاشتاجات (إنستجرام)</div>
+          <div class="hashtags ar">#سيزر_جيم #تحدي_سيزر #جيم_بني_سويف #تخسيس #لياقة #جيم <span class="ltr">#CezarSummerShred #summerbody #transformation</span></div>
+          <small><b>ملاحظة فيسبوك:</b> اعمل إيفنت «تحدي سيزر صيف شريد» بنفس الكلام؛ ثبّت البوست. استخدم 2–3 هاشتاجات بس على فيسبوك.</small>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="post">
+        <div class="ph"><span class="t">★ بوست 2 — ليه سيزر (تعريف بالبراند)</span><span><span class="platform both">FB + IG</span> · كاروسيل · <span class="chip c-green">دائم</span></span></div>
+        <div class="pb">
+          <div class="label">شرائح الكاروسيل</div>
+          <div class="copy">شريحة 1: «ليه بني سويف بتتمرن في سيزر 👇»
+شريحة 2: 🏋️ أجهزة شغّالة فعلاً (أوزان حرة + ماكينات + منطقة فانكشنال)
+شريحة 3: 🎯 كابتن عبدالله بيبني خطة على مقاسك — مش قالب واحد للكل
+شريحة 4: 🔥 كروس فيت ولياقة وظيفية بتشدّك من أول أسبوع
+شريحة 5: 🤝 مجتمع «محاربين» بتحس فيه إنك في عيلة
+شريحة 6: «تعالى شوف بنفسك — أول جلسة علينا. ابعت (جرّب).»</div>
+          <div class="label">الكابشن</div>
+          <div class="copy">الجيم مش بس أجهزة — الجيم ناسه والخطة اللي تمشّيك صح. شوف ليه سيزر بقى بيت لناس كتير 🏠💪 أول جلسة علينا — ابعت «جرّب».</div>
+          <div class="hashtags ar">#سيزر_جيم #لياقة_بني_سويف #جيم #لياقة #نادي_رياضي <span class="ltr">#CezarGym #gymlife</span></div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="post">
+        <div class="ph"><span class="t">★ بوست 3 — قصة تحوّل</span><span><span class="platform both">FB + IG</span> · صورة/ريل · <span class="chip c-green">دائم</span></span></div>
+        <div class="pb">
+          <div class="callout warn" style="margin-top:0">قالب جاهز — استبدله بقصة عضو حقيقي. لازم موافقة مكتوبة قبل نشر صورة قبل/بعد. مفيش صورة؟ استخدم شهادة مكتوبة + مقطع تمرين.</div>
+          <div class="label">الكابشن</div>
+          <div class="copy">«ماكنتش متخيّل إني أقدر أتغيّر. بعد شهور من الالتزام… مبقتش عارف نفسي القديم.» 💪
+
+دي مش معجزة — دي حصص منتظمة، وخطة على المقاس، وإنك تيجي بانتظام. الخطة علينا، انت بس تعالى.
+
+👉 رحلتك تبدأ برسالة واحدة. ابعتلنا «أبدأ».</div>
+          <div class="hashtags ar">#تخسيس #نتيجة #لياقة #جيم_بني_سويف <span class="ltr">#transformation #beforeafter #CezarGym</span></div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="post">
+        <div class="ph"><span class="t">★ بوست 4 — «5 أخطاء» تعليمي</span><span><span class="platform both">FB + IG</span> · كاروسيل · <span class="chip c-green">دائم · حفظ عالي</span></span></div>
+        <div class="pb">
+          <div class="label">الشرائح</div>
+          <div class="copy">1: «5 أخطاء بتقتل تخسيسك 🛑 (احفظ ده)»
+2: ❌ بتاكل أقل من اللازم ← جسمك بيقاوم. كُل بروتين كفاية.
+3: ❌ كارديو بس من غير أوزان ← العضل هو اللي بيحرق طول اليوم.
+4: ❌ بتقلّل النوم ← نوم وحش = أكل عصبي ونتيجة أقل.
+5: ❌ سعرات سايلة ← العصير والقهوة بالسكر بتتجمّع بسرعة.
+6: ❌ من غير خطة ← «على البركة» بيوقّفك. خُد خطة.
+7: «عايز خطة مفصّلة ليك؟ ابعت (خطة). — سيزر جيم كلوب»</div>
+          <div class="label">الكابشن</div>
+          <div class="copy">التخسيس مش إنك تعمل أكتر — التخسيس إنك تبطّل الغلطات دي. احفظ البوست واعمل تاج لحد محتاجه 👇</div>
+          <div class="hashtags ar">#تخسيس #نصايح_رياضية #لياقة #جيم_بني_سويف <span class="ltr">#fatloss #fitnesstips</span></div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="post">
+        <div class="ph"><span class="t">★ بوست 5 — بروتين بأقل تكلفة</span><span><span class="platform both">FB + IG</span> · كاروسيل · <span class="chip c-green">دائم</span></span></div>
+        <div class="pb">
+          <div class="label">الشرائح</div>
+          <div class="copy">1: «ابنِ عضل بأقل تكلفة 💪 — 6 مصادر بروتين رخيصة»
+2: 🥚 البيض — أرخص بروتين كامل
+3: 🫘 الفول/العدس — بروتين + ألياف بيشبّعك
+4: 🐔 صدور الفراخ — الكلاسيك
+5: 🐟 تونة معلّبة — سريعة ورخيصة و25 جرام بروتين
+6: 🥛 زبادي/لبنة — سناك ممتاز
+7: «التضخيم مش معناه فلوس كتير. ابعت (خطة) لدليل وجبات اقتصادي.»</div>
+          <div class="label">الكابشن</div>
+          <div class="copy">البروتين مش لازم مكملات غالية — أكل بلدي حقيقي بيعمل الشغل. احفظ وشير 🍳</div>
+          <div class="hashtags ar">#تغذية #بروتين #لياقة #دايت #صحة <span class="ltr">#nutrition #mealprep #CezarGym</span></div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="post">
+        <div class="ph"><span class="t">★ بوست 6 — تعريف بمدرب</span><span><span class="platform both">FB + IG</span> · ريل · <span class="chip c-green">دائم</span></span></div>
+        <div class="pb">
+          <div class="label">الكابشن</div>
+          <div class="copy">اتعرّفوا على كابتن عبدالله ياسر 👋 — مدرب كروس فيت ولياقة وظيفية في سيزر.
+«شغلتي مش إني أتعبك، شغلتي إني أحسّنك بأمان.» 💯
+احجز حصة مع كابتن عبدالله: ابعت «كابتن».</div>
+          <div class="hashtags ar">#مدرب #مدرب_شخصي #لياقة #جيم_بني_سويف <span class="ltr">#coach #personaltrainer #CezarGym</span></div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="post">
+        <div class="ph"><span class="t">★ بوست 7 — أول يوم (مجتمع)</span><span><span class="platform ig">IG</span> + FB · ريل · <span class="chip c-green">دائم</span></span></div>
+        <div class="pb">
+          <div class="label">الكابشن</div>
+          <div class="copy">تخيّل: أول يوم ليك وكنت متوتر على الفاضي 😅➡️😎
+في سيزر حد بيفرجك المكان، بيظبطك، وتطلع وانت بتخطط لليوم التاني. تعالى شوف بنفسك. أول جلسة مجانًا — ابعت «جرّب».</div>
+          <div class="hashtags ar">#جيم #تحفيز #لياقة #جيم_بني_سويف <span class="ltr">#gymtok #firstday #CezarGym</span></div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="post">
+        <div class="ph"><span class="t">★ بوست 8 — عرض المؤسّسين</span><span><span class="platform both">FB + IG</span> · ريل/كاروسيل · <span class="chip c-yellow">الإثنين 29 يونيو</span></span></div>
+        <div class="pb">
+          <div class="label">الكابشن</div>
+          <div class="copy">🔥 عرض المؤسّسين — الأسبوع ده بس.
+
+اشترك في تحدي الصيف قبل <b>الأحد 5 يوليو</b> واضمن:
+✅ سعر المؤسّسين للدفعة الأولى
+✅ متابعة تغذية ضمن الباقة
+✅ تثبيت السعر طول مدة اشتراكك
+
+بعد 5 يوليو السعر بيزيد وهدايا الدفعة الأولى بتخلص.
+👉 ابعت «اشتراك» أو واتساب 0109 741 9761.</div>
+          <div class="hashtags ar">#عرض #اشتراك_جيم #جيم #لياقة #جيم_بني_سويف <span class="ltr">#offer #summerbody #CezarGym</span></div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="post">
+        <div class="ph"><span class="t">★ بوست 9 — إغلاق آخر يوم</span><span><span class="platform both">FB + IG</span> · ستوري + بوست · <span class="chip c-yellow">الأحد 5 يوليو</span></span></div>
+        <div class="pb">
+          <div class="label">الكابشن</div>
+          <div class="copy">🚨 آخر يوم. الباب بيتقفل النهاردة بالليل.
+
+دي اللحظة اللي أغلب الناس بتعدّيها… وبعدين تتمنى لو ماعدّتهاش. بعد 30 يوم يا إما يبقى عندك نتيجة… يا إما عذر جديد.
+
+عرض المؤسّسين بيخلص نص الليل. ابعت «اشتراك» دلوقتي، واحنا نكمّل معاك 💪</div>
+          <div class="hashtags ar">#آخر_فرصة #عرض #جيم #لياقة #جيم_بني_سويف <span class="ltr">#lastchance #summerbody</span></div>
+        </div>
+      </div>
+
+      <div class="callout"><b>قوالب لباقي الأيام:</b> كل يوم فاضل في الخطة بيعيد استخدام واحد من الأشكال دي — <em>كاروسيل تعليمي</em> (بوست 4/5)، <em>ريل شرح</em> (القسم 09)، <em>بوست إثبات</em> (بوست 3)، <em>تصويت تفاعلي</em>، أو <em>ترويج</em> (بوست 8/9). غيّر الهوك، بدّل الموضوع، خلي الدعوة للإجراء ثابتة. شوف <a href="#appendix">بنك الأفكار</a> لـ20 هوك زيادة.</div>
+    </section>
+
+    <!-- 9 -->
+    <section id="reels">
+      <span class="section-num">القسم 09</span>
+      <h2>الريلز والستوري — سكربتات لقطة بلقطة</h2>
+      <p>الريلز أقوى أداة وصول عندك. صوّر 3–4/أسبوع في جلسة واحدة بالموبايل. خليها <b>15–30 ثانية</b>، الهوك في أول ثانية، نص على الشاشة (أغلب الناس بتتفرّج من غير صوت)، وصوت تريند.</p>
+
+      <div class="post">
+        <div class="ph"><span class="t">ريل A — هايب إطلاق التحدي</span><span>15–25ث · صوت حماسي تريند</span></div>
+        <div class="pb">
+          <div class="tbl-scroll"><table>
+            <tr><th>الزمن</th><th>اللقطة</th><th>النص على الشاشة</th></tr>
+            <tr><td>0–1ث</td><td>زوم سريع على حد بيرفع، عرق، شدة</td><td>«30 يوم.»</td></tr>
+            <tr><td>1–4ث</td><td>قطعات سريعة: أوزان، كلاس، ابتسامات، مدرب بيأمّن</td><td>«جسم جديد. صفر أعذار.»</td></tr>
+            <tr><td>4–10ث</td><td>نص فوق مونتاج للمشمول</td><td>«برنامج بمدرب · تغذية · كلاسات · جايزة 🏆»</td></tr>
+            <tr><td>10–18ث</td><td>لقطة جماعية / نهاية حماسية + لوجو</td><td>«25 مكان بس. تحدي سيزر صيف شريد.»</td></tr>
+            <tr><td>18–22ث</td><td>كابتن بيكلّم الكاميرا أو كارت نص</td><td>«ابعت (شريد) تشترك 👇»</td></tr>
+          </table></div>
+          <small>الكابشن: استخدم <b>بوست 1</b>. الدعوة: «ابعت شريد».</small>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="ph"><span class="t">ريل B — «بطّل تعمل السكوات كده ❌»</span><span>20–30ث · شرح · دائم</span></div>
+        <div class="pb">
+          <div class="tbl-scroll"><table>
+            <tr><th>الزمن</th><th>اللقطة</th><th>النص على الشاشة</th></tr>
+            <tr><td>0–2ث</td><td>الكابتن بيعمل السكوات الغلط (الركبة بتدخل، الكعب طالع)</td><td>«بطّل تعمل السكوات كده ❌»</td></tr>
+            <tr><td>2–6ث</td><td>تجميد + سهم على الغلطة</td><td>«علشان كده ركبتك بتوجعك»</td></tr>
+            <tr><td>6–18ث</td><td>الكابتن بيعمل الصح بالراحة، زاويتين</td><td>«اعمل ده بدل كده ✅ (3 نصايح)»</td></tr>
+            <tr><td>18–26ث</td><td>تكرار نضيف، سرعة كاملة</td><td>«احفظ ده. عايز تصحيح أداء؟ ابعت (فورم).»</td></tr>
+          </table></div>
+          <small>كرر نفس الشكل للديدليفت، السحب، البنش، البلانك — ده 5 أسابيع ريلز شرح.</small>
+        </div>
+      </div>
+
+      <div class="post">
+        <div class="ph"><span class="t">ريل C — كشف تحوّل</span><span>15–20ث · صوت عاطفي/تريند</span></div>
+        <div class="pb">
+          <div class="tbl-scroll"><table>
+            <tr><th>الزمن</th><th>اللقطة</th><th>النص على الشاشة</th></tr>
+            <tr><td>0–2ث</td><td>صورة/مقطع «قبل» بلون باهت شوية</td><td>«أول يوم 😔»</td></tr>
+            <tr><td>2–4ث</td><td>نزول البيت ← انتقالة (مسح/تصفيقة)</td><td>«بعد رحلة التزام…»</td></tr>
+            <tr><td>4–12ث</td><td>«بعد» — واثق، بيتمرن بقوة</td><td>«نفس الشخص. حياة جديدة. 💪»</td></tr>
+            <tr><td>12–18ث</td><td>العضو بيبتسم مع الكابتن</td><td>«دورك. ابعت (أبدأ).»</td></tr>
+          </table></div>
+          <small>⚠️ لازم موافقة مكتوبة. الشكل ده بيتفوّق دايمًا — خليه ثابت كل أسبوع.</small>
+        </div>
+      </div>
+
+      <h3>قائمة الستوري اليومية (اختار 2–4/يوم)</h3>
+      <div class="grid g2">
+        <div class="card">
+          <ul class="tight">
+            <li><b>تصويت:</b> «يوم رجل النهاردة؟ 😩 آه / هزوّغ 👀»</li>
+            <li><b>ده ولا ده:</b> «قهوة ☕ ولا بري ورك آوت ⚡ قبل التمرين؟»</li>
+            <li><b>ستيكر عداد:</b> لميعاد نهاية العرض</li>
+            <li><b>كويز:</b> «البيضة فيها بروتين قد إيه؟» (تعليم بسيط)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <ul class="tight">
+            <li><b>كواليس:</b> كابتن بيجهّز، كلاس بيسخّن</li>
+            <li><b>إعادة نشر</b> لأي عضو يعمل تاج (+ «🔥»)</li>
+            <li><b>بوكس أسئلة:</b> «اسأل الكابتن أي حاجة»</li>
+            <li><b>ستيكر «ابعتلنا»</b> في أيام العرض ← يوجّه لواتساب</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section id="workflow">
+      <span class="section-num">القسم 10</span>
+      <h2>خطة الإنتاج — تكمّل ازاي على المدى الطويل</h2>
+      <div class="grid g2">
+        <div class="card">
+          <h3 style="margin-top:0">إيقاع التجميع الأسبوعي (~3 ساعات)</h3>
+          <ol class="num-list">
+            <li><b>الأحد (30 د):</b> راجع أرقام الأسبوع اللي فات، واختار مواضيع الأسبوع الجاي من الخطة دي.</li>
+            <li><b>الأحد/الإثنين (60 د):</b> صوّر كل الريلز والصور للأسبوع في جلسة واحدة (الأعضاء وهي بتتمرن = محتوى مجاني).</li>
+            <li><b>الإثنين (60 د):</b> اكتب وصمّم الكابشن/الكاروسيل (استخدم قوالب كانفا)، واجدول كل حاجة.</li>
+            <li><b>يوميًا (15–20 د):</b> انشر ستوري + رد على كل التعليقات والرسائل.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">الأدوات (أغلبها مجاني)</h3>
+          <ul class="tight">
+            <li><b>Canva (كانفا)</b> — كاروسيل وجرافيك العروض (اعمل 3 قوالب براند مرة وكرّرها للأبد)</li>
+            <li><b>Meta Business Suite</b> — جدولة فيسبوك وإنستجرام مع بعض، مجاني</li>
+            <li><b>CapCut (كاب كات)</b> — مونتاج الريلز، كابشن، أصوات تريند</li>
+            <li><b>WhatsApp Business</b> — ردود سريعة، كتالوج، تصنيف العملاء</li>
+            <li><b>Google Sheet</b> — جدول العملاء ومؤشرات الأداء (القسم الجاي)</li>
+          </ul>
+          <div class="callout info" style="margin-bottom:0">📷 <b>المحتوى موجود في كل ركن في الجيم.</b> صوّر لحظات التدريب، الكلاسات، الأرقام القياسية، والأعضاء اللي موافقين كل يوم. جلسة 30 دقيقة = محتوى أسبوع.</div>
+        </div>
+      </div>
+      <div class="callout warn"><b>اختبار الاستمرارية:</b> لو النشر اليومي على المنصتين بقى تقيل، حافظ على <b>ريلز إنستجرام + الستوري + ردود واتساب</b> الأول، وخلي فيسبوك إعادة نشر متكيّفة. الانتظام على مستوى تقدر تكمّله أحسن من انفجار بيخلص في الأسبوع التاني.</div>
+    </section>
+
+    <!-- 11 -->
+    <section id="measure">
+      <span class="section-num">القسم 11</span>
+      <h2>القياس والتحسين</h2>
+      <h3>المراجعة الأسبوعية (كل أحد، 20 دقيقة)</h3>
+      <div class="tbl-scroll">
+      <table>
+        <tr><th>اتابع أسبوعيًا</th><th>فين</th><th>اعمل إيه لو ضعيف</th></tr>
+        <tr><td>الوصول والمتابعين الجدد</td><td>تحليلات إنستجرام/فيسبوك</td><td>انشر ريلز أكتر؛ تفاعل برّه أكتر</td></tr>
+        <tr><td>أحسن 3 / أقل 3 بوستات</td><td>التحليلات</td><td>اعمل أكتر من اللي نجح؛ سيب اللي ماجابش</td></tr>
+        <tr><td>الحفظ والمشاركة</td><td>تحليلات إنستجرام</td><td>قليل = خلي المحتوى أنفع وأكتر تعليمًا</td></tr>
+        <tr><td>الرسائل / استفسارات واتساب</td><td>عد يدوي ← Sheet</td><td>قليل = ضيف دعوات أوضح وبوستات إثبات أكتر</td></tr>
+        <tr><td>حصص تجريبية ← اشتراك</td><td>Sheet</td><td>استفسارات كتير واشتراكات قليلة = ظبّط سكربت الرد / العرض</td></tr>
+      </table>
+      </div>
+      <h3>جدول بسيط للعملاء والمؤشرات (اعمله في Google Sheet)</h3>
+      <div class="tbl-scroll">
+      <table>
+        <tr><th>التاريخ</th><th>المصدر (IG/FB)</th><th>الاسم</th><th>نوع الاستفسار</th><th>حجز تجربة؟</th><th>اشترك؟</th><th>ملاحظات</th></tr>
+        <tr><td>—</td><td>—</td><td>—</td><td>سعر / كلاس / مواعيد</td><td>نعم/لا</td><td>نعم/لا</td><td>—</td></tr>
+      </table>
+      </div>
+      <div class="callout ok"><b>أهم رقم على الإطلاق:</b> رسائل/واتساب ← تجارب ← اشتراكات. المتابعين حلوين، بس <b>المحادثات هي الفلوس.</b> لو بوست جاب رسائل، يبقى ناجح حتى لو لايكاته بسيطة.</div>
+    </section>
+
+    <!-- 12 -->
+    <section id="appendix">
+      <span class="section-num">القسم 12</span>
+      <h2>الملحق — بنك الهاشتاجات وخزنة الأفكار</h2>
+
+      <h3>بنك الهاشتاجات (اخلط 8–15 لكل بوست إنستجرام)</h3>
+      <div class="grid g2">
+        <div class="card">
+          <h4>عربي</h4>
+          <p class="hashtags ar">#جيم #لياقة #لياقة_بدنية #تخسيس #كمال_اجسام #تمارين #رشاقة #نادي_رياضي #تغذية #بروتين #حياة_صحية #تحدي_رياضي #نتيجة #رياضة #جسم_رياضي #مدرب_شخصي #اشتراك_جيم #دايت #صحة #تحفيز #سيزر_جيم #تحدي_سيزر</p>
+        </div>
+        <div class="card">
+          <h4>إنجليزي</h4>
+          <p class="hashtags">#fitness #gym #workout #fitnessmotivation #gymlife #fitfam #training #fatloss #weightloss #fitnessjourney #transformation #personaltrainer #healthylifestyle #strengthtraining #summerbody #fitnesstips #bodybuilding #cardio #CezarGym #CezarSummerShred</p>
+        </div>
+      </div>
+      <div class="callout">ضيف هاشتاجات <b>محلية</b> كل مرة — دي أعلى وصول مستهدف: <span class="hashtags ar" style="display:inline">#بني_سويف #جيم_بني_سويف #لياقة_بني_سويف</span>. غيّر المجموعات علشان ماتكررش نفس البلوك بالظبط كل بوست.</div>
+
+      <h3>20 هوك زيادة (دوّرهم لبوستات بلا نهاية)</h3>
+      <div class="grid g2">
+        <div class="card"><ul class="tight">
+          <li>«انت مش كسلان. انت بس بتعمله من غير خطة.»</li>
+          <li>«3 حاجات نفسي حد كان قالهملي قبل أول يوم في الجيم.»</li>
+          <li>«بطّل 100 تمرين بطن. اعمل ده بدالهم.»</li>
+          <li>«أرخص طريقة تبني بيها عضل في بني سويف.»</li>
+          <li>«ليه الميزان بيكدب عليك.»</li>
+          <li>«اتمرنت 30 يوم. حصل إيه؟»</li>
+          <li>«السبب رقم 1 إن المبتدئين بيسيبوا (وإحنا بنحلّه).»</li>
+          <li>«مفيش وقت؟ تمرين 20 دقيقة كفاية.»</li>
+          <li>«كُل البروتين ده علشان تكبّر فعلاً.»</li>
+          <li>«مشكلتك في الأداء، مش في المجهود.»</li>
+        </ul></div>
+        <div class="card"><ul class="tight">
+          <li>«قبل وبعد — نفس الشخص، 90 يوم.»</li>
+          <li>«رهبة الجيم حقيقية. إحنا بنكسرها ازاي.»</li>
+          <li>«يوم في سيزر شكله إيه فعلاً.»</li>
+          <li>«كارديو ولا أوزان للتخسيس — الحسم.»</li>
+          <li>«اتعرّف على الكابتن اللي هيغيّر حياتك.»</li>
+          <li>«5 أكلات شكلها صحي وهي مش كده.»</li>
+          <li>«دليل المبتدئين لأول شهر.»</li>
+          <li>«مش محتاج تحفيز. محتاج نظام.»</li>
+          <li>«العضو ده بدأ من نفس مكانك بالظبط.»</li>
+          <li>«آخر فرصة: الباب بيتقفل 5 يوليو.»</li>
+        </ul></div>
+      </div>
+
+      <h3>تشيك ليست ما قبل الإطلاق (اعملها 3–7 يونيو، قبل اليوم الأول)</h3>
+      <ul class="checklist">
+        <li>املأ كل <a href="#config">بيانات البراند</a> + حدّد عرض التحدي وسعره</li>
+        <li>ظبّط الصفحتين (بايو، لينك، زر الإجراء، هايلايتس، غلاف)</li>
+        <li>جهّز ردود واتساب السريعة (سعر / مواعيد / عنوان / تجربة)</li>
+        <li>صوّر باتش ريلز + صور (هايب التحدي، ريل شرح واحد، لقطات للجيم)</li>
+        <li>اعمل 3 قوالب كانفا (كاروسيل، اقتباس، عرض) بألوان البراند</li>
+        <li>اعمل إيفنت فيسبوك + اجدول أسبوع 1 في Meta Business Suite</li>
+        <li>رتّب مع 1–2 عضو مستعدين يشاركوا تحوّلهم / شهادتهم</li>
+        <li>اطلب من 5 أعضاء مبسوطين تقييم على جوجل + فيسبوك</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p><b>سيزر جيم كلوب — حملة سوشيال ميديا 30 يوم.</b> مبنية على أوديت حقيقي للحساب وأطر marketing-ops و social-media-manager و social-content. دليل الثقة: 🟢 ممارسة مثبتة · 🟡 جرّبها وقيس على جمهورك.</p>
+      <p><small>إعداد: أحمد شريف · مدة الحملة 8 يونيو – 7 يوليو 2026 · السعر والعرض النهائي يحدّدهم صاحب الجيم قبل الإطلاق. خُد دايمًا موافقة مكتوبة قبل نشر صور الأعضاء.</small></p>
+    </footer>
+
+  </main>
+</div>
+
+<div class="toolbar">
+  <button class="btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ لأعلى</button>
+  <button class="btn brand" onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+</div>
+
+</body>
+</html>
