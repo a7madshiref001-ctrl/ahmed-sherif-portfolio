@@ -170,10 +170,9 @@ h1,h2,h3{ font-family:var(--f-display); font-weight:800; line-height:1.02; lette
 
 /* ============== MARQUEE ============== */
 .marquee{ overflow:hidden; border-block:1px solid rgb(var(--fg) / .1); padding-block:18px; }
-.marquee .track{ display:flex; gap:48px; width:max-content; animation:march 28s linear infinite; }
+.marquee .track{ display:flex; gap:48px; width:max-content; direction:ltr; animation:march 28s linear infinite; }
 .marquee:hover .track{ animation-play-state:paused; }
 @keyframes march{ to{ transform:translateX(calc(-50% - 24px)); } }
-html[dir="rtl"] .marquee .track{ animation-direction:reverse; }
 .marquee b{ font-family:var(--f-display); font-weight:700; font-size:clamp(1.1rem,2.4vw,1.7rem); color:rgb(var(--fg) / .55); display:inline-flex; align-items:center; gap:48px; white-space:nowrap; }
 .marquee b::after{ content:"✳"; color:rgb(var(--accent)); }
 
